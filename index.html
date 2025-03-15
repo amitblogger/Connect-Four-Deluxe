@@ -1,1 +1,64 @@
+<div class="game-wrapper">
+    <div class="container">
+        <h1>Connect Four Deluxe</h1>
+        
+        <div class="setup" id="setup">
+            <div class="player-input">
+                <input type="text" id="player1-name" placeholder="Player 1 Name" maxlength="20">
+                <input type="text" id="player2-name" placeholder="Player 2 Name (or leave blank for AI)" maxlength="20">
+            </div>
+            <div class="mode-select">
+                <label>Mode:</label>
+                <select id="game-mode">
+                    <option value="two-player">Two Player</option>
+                    <option value="ai-easy">AI (Easy)</option>
+                    <option value="ai-hard">AI (Hard)</option>
+                </select>
+            </div>
+            <button id="start-game">Start Game</button>
+        </div>
 
+        <div class="game-content" id="game-content" style="display: none;">
+            <div class="theme-select">
+                <label>Theme:</label>
+                <select id="theme-switch">
+                    <option value="classic">Classic</option>
+                    <option value="neon">Neon</option>
+                    <option value="cosmic">Cosmic</option>
+                </select>
+            </div>
+
+            <div class="score-board">
+                <div class="score" id="player1-score">
+                    <p id="player1-label">Player 1</p>
+                    <span id="player1-wins">0</span>
+                    <p>Streak: <span id="player1-streak">0</span></p>
+                </div>
+                <div class="score" id="player2-score">
+                    <p id="player2-label">Player 2</p>
+                    <span id="player2-wins">0</span>
+                    <p>Streak: <span id="player2-streak">0</span></p>
+                </div>
+            </div>
+
+            <div class="timer">Time Left: <span id="timer">30</span>s</div>
+            
+            <div class="game-grid" id="game-grid">
+                <!-- Grid will be generated dynamically -->
+            </div>
+
+            <div class="result" id="result">
+                <p id="result-text"></p>
+            </div>
+
+            <div class="controls">
+                <button id="undo-move">Undo Move</button>
+                <button id="reset-game">Reset Game</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="drop-sound" src="https://www.soundjay.com/buttons/beep-01a.mp3"></audio>
+<audio id="win-sound" src="https://www.soundjay.com/buttons/beep-02.mp3"></audio>
+<audio id="draw-sound" src="https://www.soundjay.com/buttons/beep-03.mp3"></audio>
